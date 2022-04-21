@@ -74,7 +74,7 @@
         <ScrollView>
             <StackLayout Padding="10">
                 
-                <Image Source="{Binding Icon.png}" Height="16"/>
+                <Image Source="{Binding Icon.png}"/>
                 
                 <Label Text="Locatie" 
                        Style="{StaticResource labelStyle}" />

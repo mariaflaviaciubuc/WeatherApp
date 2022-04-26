@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,13 +10,23 @@ namespace WeatherApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
-        }
+        
+        
 
-        protected override void OnStart()
+     
+    }
+  
+    protected override async void OnStart()
         {
             // Handle when your app starts
+
+            // show the splash
+            MainPage = new WelcomePage();
+            // simple wait or initialize some services
+            await Task.Delay(10000);
+            // show the real page
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnSleep()

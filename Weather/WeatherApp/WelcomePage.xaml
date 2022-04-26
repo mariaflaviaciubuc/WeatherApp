@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="WeatherApp.WelcomePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid 
+            RowDefinitions="Auto, *"
+          
+         >
+            <Grid.Background>
+                <LinearGradientBrush 
+                    StartPoint="0, 0" 
+                    EndPoint="0, 1">
+                    <GradientStop Color="#003366" Offset="0.1"></GradientStop>
+                    <GradientStop Color="#001F3D" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+       
+   
+          
+           
+                    <Grid
+                Grid.Row="1"
+                RowDefinitions="*, Auto"
+                RowSpacing="0">
+                        <Image
+                    Grid.Row="0"
+                    Aspect="AspectFit"
+                    Source="https://i.imgur.com/TUuB6K3.png"></Image>
+                        <StackLayout 
+                    Grid.Row="1"
+                    VerticalOptions="End">
+                            <Label
+                        Margin="24, 8, 0, 8"
+                        Text="Welcome to your weather app"
+                        LineHeight="0.85"
+                        FontFamily="Times New Roman"
+                        TextColor="DarkGoldenrod"/>
+                            <Button
+                        Text="Explore now"
+                        FontFamily="Barlow_Medium"
+                        FontSize="Medium"
+                        BackgroundColor="#FFBB00"
+                        TextColor="#212121"
+                        Padding="16, 22, 16, 22"
+                        Margin="16, 8, 16, 8"
+                        Command="{Binding UseCurrentLocationCommand}"
+                        CornerRadius="36"></Button>
+                            <Label
+                        Text="Or enter your place name"
+                        FontSize="Medium"
+                       
+                        HorizontalOptions="Center"
+                        TextDecorations="Underline"
+                        Margin="0, 4, 0, 36"
+                        TextColor="#001F3D">
+                      
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+         
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

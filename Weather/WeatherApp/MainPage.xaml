@@ -31,19 +31,11 @@
         <Grid BackgroundColor="#ffff" 
               >
           
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Image Source="https://www.omahatribe.com/wp-content/uploads/2016/05/istockphoto-531889697-612x612-1.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+          
+            <Image Source="https://www.omahatribe.com/wp-content/uploads/2016/05/istockphoto-531889697-612x612-1.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
             <Label Text="Cauta localitate" 
                    Grid.ColumnSpan="3"
+                   Margin="0,20,8,9"
                    HorizontalOptions="Center"
                    TextColor="DarkBlue" 
                    FontAttributes="Bold" 
@@ -60,6 +52,8 @@
                    BackgroundColor="WhiteSmoke"
                    TextColor="Black"
                    Text="Bucharest"
+                   
+                   
                   />
 
             <Button Grid.Row="1" 
@@ -70,6 +64,8 @@
                     BackgroundColor="DarkBlue"
                     TextColor="White"
                     Clicked="OnGetWeatherButtonClicked"
+                    CornerRadius="25"
+                    
                     />
         </Grid>
 
@@ -79,112 +75,116 @@
                     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                
                     </StackLayout>
-                                                
-                  
-   
-                   
 
+
+
+
+               
                     <Frame BorderColor="Black"
                Padding="5">
                         <StackLayout Orientation="Horizontal"
                          Spacing="15">
-                        <Image Source="https://icons-for-free.com/download-icon-location-131965017472890605_256.ico" HeightRequest="30"/>
-                        <Label x:Name="Label1"
+                            <Image Source="https://icons-for-free.com/download-icon-location-131965017472890605_256.ico" HeightRequest="30"/>
+                            <Label x:Name="Label1"
                        Text="Locatie" 
                        Style="{StaticResource labelStyle}" IsVisible="False" />
-                        <Label Text="{Binding Title}" 
+                            <Label Text="{Binding Title}" 
                        Style="{StaticResource labelResultStyle}" />
-                    </StackLayout>
+                        </StackLayout>
                     </Frame>
 
 
-                <Frame BorderColor="Black"
+                    <Frame BorderColor="Black"
                Padding="3">
-                    <StackLayout Orientation="Horizontal"
+                        <StackLayout Orientation="Horizontal"
                          Spacing="15">
-                        <Image Source="https://flyclipart.com/thumb2/hot-warm-temperature-cold-png-icon-free-download-398859.png" HeightRequest="30"/>
-                        <Label x:Name="Label2"
+                            <Image Source="https://flyclipart.com/thumb2/hot-warm-temperature-cold-png-icon-free-download-398859.png" HeightRequest="30"/>
+                            <Label x:Name="Label2"
                        Text="Temperatura" 
                        Style="{StaticResource labelStyle}" IsVisible="False"/>
-                        <Label 
+                            <Label 
                        Text="{Binding Main.Temperature}" 
                        Style="{StaticResource labelResultStyle}" />
-                        <Label Text="°F" FontSize="Medium"/>
-                    </StackLayout>
-                </Frame>
+                            <Label Text="°F" FontSize="Medium"/>
+                        </StackLayout>
+                    </Frame>
 
-                <Label x:Name="Label3"
+
+                    <Frame BorderColor="Black"
+               Padding="3">
+                        <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/172/172922.png" HeightRequest="30"/>
+                            <Label x:Name="Label3"
                        Text="Viteza vântului" 
                        Style="{StaticResource labelStyle}" IsVisible="False" />
-                <Frame BorderColor="Black"
-               Padding="3">
-                    <StackLayout Orientation="Horizontal"
-                         Spacing="15">
-                        <Image Source="https://cdn-icons-png.flaticon.com/512/172/172922.png" HeightRequest="30"/>
-                        <Label Text="{Binding Wind.Speed}" 
+                            <Label Text="{Binding Wind.Speed}" 
                        Style="{StaticResource labelResultStyle}" />
-                        <Label Text="km/h" FontSize="Medium"/>
-                    </StackLayout>
-                </Frame>
+                            <Label Text="km/h" FontSize="Medium"/>
+                        </StackLayout>
+                    </Frame>
 
-    
 
-                <Label x:Name="Label4"
+
+
+                    <Frame BorderColor="Black"
+               Padding="3">
+                        <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                            <Image Source="https://flyclipart.com/thumb2/humidity-rain-steam-icon-png-and-vector-for-free-download-358262.png" HeightRequest="30"/>
+                            <Label Text="{Binding Main.Humidity}" 
+                       Style="{StaticResource labelResultStyle}" />
+                            <Label x:Name="Label4"
                        Text="Umiditate" 
                        Style="{StaticResource labelStyle}" IsVisible="False" />
-                <Frame BorderColor="Black"
+                            <Label Text="%" FontSize="Medium" />
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <Frame BorderColor="Black"
                Padding="3">
-                    <StackLayout Orientation="Horizontal"
+                        <StackLayout Orientation="Horizontal"
                          Spacing="15">
-                        <Image Source="https://flyclipart.com/thumb2/humidity-rain-steam-icon-png-and-vector-for-free-download-358262.png" HeightRequest="30"/>
-                <Label Text="{Binding Main.Humidity}" 
-                       Style="{StaticResource labelResultStyle}" />
-                        <Label Text="%" FontSize="Medium" />
-                    </StackLayout>
-                </Frame>
-
-
-                <Label x:Name="Label5"
+                            <Image Source="https://png.pngtree.com/png-vector/20191005/ourmid/pngtree-eye-icon-isolated-on-background-png-image_1790414.jpg" HeightRequest="30"/>
+                            <Label x:Name="Label5"
                        Text="Visibilitate" 
                        Style="{StaticResource labelStyle}" IsVisible="False"/>
-                  <Frame BorderColor="Black"
-               Padding="3">
-                            <StackLayout Orientation="Horizontal"
-                         Spacing="15">
-                        <Image Source="https://png.pngtree.com/png-vector/20191005/ourmid/pngtree-eye-icon-isolated-on-background-png-image_1790414.jpg" HeightRequest="30"/>
-                        <Label Text="{Binding Weather[0].Visibility}" 
+                            <Label Text="{Binding Weather[0].Visibility}" 
                        Style="{StaticResource labelResultStyle}" />
-                    </StackLayout>
-                </Frame>
+                        </StackLayout>
+                    </Frame>
 
-                <Label x:Name="Label6"
+                    <Frame BorderColor="Black"
+               Padding="3">
+                        <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                            <Image Source="https://pngset.com/images/sunrise-stroke-weather-symbol-sunrise-sunset-icon-stencil-text-logo-trademark-transparent-png-1596432.png" HeightRequest="30"/>
+                            <Label x:Name="Label6"
                        Text="Răsărit" 
                        Style="{StaticResource labelStyle}" IsVisible="False" />
-               <Frame BorderColor="Black"
-               Padding="3">
-                                    <StackLayout Orientation="Horizontal"
-                         Spacing="15">
-                        <Image Source="https://pngset.com/images/sunrise-stroke-weather-symbol-sunrise-sunset-icon-stencil-text-logo-trademark-transparent-png-1596432.png" HeightRequest="30"/>
-                        <Label Text="{Binding Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}" 
+                            <Label Text="{Binding Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
-                    </StackLayout>
-                </Frame>
+                        </StackLayout>
+                    </Frame>
 
-                <Label x:Name="Label7"
+                    <Frame BorderColor="Black"
+               Padding="3">
+                        <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                            <Image Source="https://img1.pnghut.com/24/19/21/aS29cCemX9/sunset-symbol-sunrise-icon-design-horizon.jpg" HeightRequest="30"/>
+                            <Label x:Name="Label7"
                        Text="Apus" 
                        Style="{StaticResource labelStyle}" IsVisible="False"/>
-                <Frame BorderColor="Black"
-               Padding="3">
-                      <StackLayout Orientation="Horizontal"
-                         Spacing="15">
-                        <Image Source="https://img1.pnghut.com/24/19/21/aS29cCemX9/sunset-symbol-sunrise-icon-design-horizon.jpg" HeightRequest="30"/>
-                        <Label Text="{Binding Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}" 
+                            <Label Text="{Binding Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}" 
                        Style="{StaticResource labelResultStyle}" />
-                    </StackLayout>
-                </Frame>
-                
-                
+                        </StackLayout>
+                    </Frame>
+
+           
             </StackLayout>
+          
         </ScrollView>
     </StackLayout>    
 </ContentPage>

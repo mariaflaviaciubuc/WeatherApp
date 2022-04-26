@@ -20,6 +20,19 @@ namespace WeatherApp
                 WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(Constants.OpenWeatherMapEndpoint));
                 BindingContext = weatherData;
             }
+
+            Label1.IsVisible = true;
+            Label2.IsVisible = true;
+            Label3.IsVisible = true;
+            Label4.IsVisible = true;
+            Label5.IsVisible = true;
+            Label6.IsVisible = true;
+            Label7.IsVisible = true;
+        }
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Label1.IsVisible = true;
         }
 
         string GenerateRequestUri(string endpoint)
